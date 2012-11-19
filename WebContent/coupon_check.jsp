@@ -10,6 +10,7 @@
 	String e_month = request.getParameter("e_month");
 	String e_date = request.getParameter("e_date");
 	String send = request.getParameter("send");
+
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
