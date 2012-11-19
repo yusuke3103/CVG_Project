@@ -2,17 +2,50 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript">
+function checkForm() {
+	var StoreID = document.login.StoreID;
+	var pass = document.login.passwd;
+	
+	if(pass.value == "" && pass.value == ""){
+		alert("IDとパスワードが入力されていません");
+		StoreID.focus();
+		return false;
+	}
+	if(StoreID.value == ""){
+		alert("IDが入力されていません");
+		StoreID.focus();
+		return false;
+	}
+
+	if(pass.value == ""){
+		alert("パスワードが入力されていません");
+		pass.focus();
+		return false;
+	}
+
+	
+}
+</script>
+
 <title>Insert title here</title>
 </head>
 <body>
-<h1>menu</h1>
-<form action="./mypage.jsp">
-<table border="0">
-	<tr><td>店舗ID:<input type= "text" name = StoreID ></td></tr>
-	<tr><td>パスワード:<input type="password" name = passewd ></td></tr>
-	<tr><td><input type = "submit" value = "ログイン"  ></td></tr>
-</table>
-</form>
-<a href="store_regist.jsp" target="_brank">登録</a>
+	<h1>menu</h1>
+	<form name = "login" onsubmit="return checkForm()" method = "POST" action="./mypage.jsp">
+		<table border="0">
+			<tr>
+				<td>店舗ID:<input type="text" name=StoreID></td>
+			</tr>
+			<tr>
+				<td>パスワード:<input type="password" name=passwd></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="ログイン"></td>
+			</tr>
+		</table>
+	</form>
+	<a href="store_regist.jsp" target="_brank">登録</a>
 </body>
 </html>
