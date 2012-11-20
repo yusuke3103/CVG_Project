@@ -3,13 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Script-Type" content="text/javascript">
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="ajaxzip2/prototype.js"></script>
 <script src="ajaxzip2/ajaxzip2.js" charset="UTF-8"></script>
 <script>
 	AjaxZip2.JSONDATA = 'ajaxzip2/data';
 </script>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 <script type="text/javascript">
 	function checkForm() {
 		var storename = document.regist.storename;
@@ -42,7 +43,7 @@
 			addr1.focus();
 			return false;
 		}
-		if(phone.match(\[^0-9]\g)){
+		if(phone.match(/[^0-9]/g)){
 			alert ("数値以外が含まれています");
 			phone.focus();
 			return false;
@@ -69,11 +70,11 @@
 			</tr>
 			<tr>
 				<td>パスワード</td>
-				<td><input type=text name=pass1></td>
+				<td><input type=text name=pass1 maxlength = "6" width="10"></td>
 			</tr>
 			<tr>
 				<td>もう一度入力</td>
-				<td><input type=text name=pass2></td>
+				<td><input type=text name=pass2 maxlength = "6" size ="10"></td>
 			</tr>
 
 		</table>

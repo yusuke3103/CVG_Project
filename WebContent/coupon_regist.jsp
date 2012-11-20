@@ -3,11 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript">
+function checkForm(){
+	var name = document.regist.name;
+	var content = document.regist.content;
+	
+	if(name.value == "" ){
+		alert("クーポン内容が入力されていません。")
+	}
+}
+</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="./coupon_check.jsp">
+	<form action="./coupon_check.jsp" name = regist onsubmit="return checkForm()" method = "POST" >
 		<table>
 			<tr>
 				<td>クーポン名</td>
