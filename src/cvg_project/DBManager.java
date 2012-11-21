@@ -3,9 +3,6 @@ package cvg_project;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import javax.servlet.annotation.WebServlet;
-
-@WebServlet("/DBManager")
 public class DBManager{
 	public static Connection getConnection(){
 		try{

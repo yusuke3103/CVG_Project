@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%
+	pageEncoding="UTF-8"%>
+<%
     String storename = request.getParameter("storename");
     String passwd = request.getParameter("passwd");
     String address = request.getParameter("address");
@@ -15,8 +15,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2><u>登録内容確認画面</u></h2>
-<%
+	<h2>
+		<u>登録内容確認画面</u>
+	</h2>
+	<%
 out.println("<table border=1>");
 
 	out.println("<tr><td>店舗名</td><td>"+storename+"</td></tr>");
@@ -36,9 +38,9 @@ out.println("<input type = hidden name = mail value = " + mail + ">");
 out.println("<input type = submit value = 確定 >");
 out.println("</form>");
 %>
-<form action="./store_regist.jsp" style="display: inline">
-	<input type = submit value = 戻る >
-</form>
+	<form action="./store_regist.jsp" style="display: inline">
+		<input type=submit value=戻る>
+	</form>
 
 </body>
 </html>

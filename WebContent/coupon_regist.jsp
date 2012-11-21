@@ -18,7 +18,8 @@ function checkForm(){
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="./coupon_check.jsp" name = regist onsubmit="return checkForm()" method = "POST" >
+	<form action="./coupon_check.jsp" name=regist
+		onsubmit="return checkForm()" method="POST">
 		<table>
 			<tr>
 				<td>クーポン名</td>
@@ -64,22 +65,24 @@ function checkForm(){
 				<td><input type="radio" name=send value="グループ利用者">グループ利用者</td>
 			</tr>
 		</table>
-		<table>	
+		<table>
 			<tr>
 				<td></td>
 				<td><input type=checkbox name=s_rank value="レギュラー">レギュラー</td>
 			</tr>
 			<tr>
-				<td></td><td><input type=checkbox name=g_rank value="シルバー">シルバー</td>
+				<td></td>
+				<td><input type=checkbox name=g_rank value="シルバー">シルバー</td>
 			</tr>
 			<tr>
-				<td></td><td><input type=checkbox name=g_rank value="ゴールド">ゴールド</td>
+				<td></td>
+				<td><input type=checkbox name=g_rank value="ゴールド">ゴールド</td>
 			</tr>
 			<tr>
-			<td></td>
+				<td></td>
 				<td><input type=submit value="確認"></td>
 				<td><input type=reset value=リセット></td>
-				</tr>
+			</tr>
 		</table>
 	</form>
 </body>

@@ -70,11 +70,11 @@
 			</tr>
 			<tr>
 				<td>パスワード</td>
-				<td><input type=text name=pass1 maxlength = "6" width="10"></td>
+				<td><input type=text name=pass1 maxlength="6" width="10"></td>
 			</tr>
 			<tr>
 				<td>もう一度入力</td>
-				<td><input type=text name=pass2 maxlength = "6" size ="10"></td>
+				<td><input type=text name=pass2 maxlength="6" size="10"></td>
 			</tr>
 
 		</table>
@@ -157,7 +157,8 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td align=right><input type=submit value=確認><input type="reset" value=リセット></td>
+				<td align=right><input type=submit value=確認><input
+					type="reset" value=リセット></td>
 			</tr>
 		</table>
 

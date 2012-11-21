@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	String groupname = request.getParameter("groupname");
 	String count = request.getParameter("count");
@@ -21,8 +21,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2><u>登録内容確認画面</u></h2>
-<%
+	<h2>
+		<u>登録内容確認画面</u>
+	</h2>
+	<%
 out.println("<table border=1>");
 
 	out.println("<tr><td>グループ名</td><td>"+groupname+"</td></tr>");
