@@ -7,10 +7,13 @@
 <title>My Page</title>
 </head>
 <body>
+<center>
 	<h1>
-		<a href="./edit.html">登録情報の変更</a><br> <a href="./check.jsp">利用状況の確認</a><br>
-		<a href="./group_regist.jsp">店舗間グループ登録/確認</a><br> <a
-			href="./coupon_regist.jsp">クーポン発行/確認</a><br>
+		<a href="./check.jsp">利用状況の確認</a><br>
+		<a href="./group_regist.jsp">店舗間グループ登録/確認</a><br>
+		<a href="./coupon_regist.jsp">クーポン発行/確認</a><br>
+		<a href="./touch_nfc.jsp">ポイント加算</a>
 	</h1>
+	</center>
 </body>
 </html>
