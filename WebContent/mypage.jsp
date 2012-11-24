@@ -9,25 +9,38 @@
 </head>
 <body>
 	<center>
-		<h1>
-			<%
-				HttpSession ses = request.getSession();
-				String flg = (String) ses.getAttribute("login");
-				String msg = null;
-				if ("true".equals(flg)) {
-					out.println("管理画面");
-					out.println("<a href=\"./check.jsp\">利用状況の確認</a><br>");
-					out.println("<a href=\"./group_regist.jsp\">店舗間グループ登録/確認</a><br>");
-					out.println("<a href=\"./group_regist.jsp\">店舗間グループ登録/確認</a><br>");
-					out.println("<a href=\"./coupon_regist.jsp\">クーポン発行/確認</a><br>");
-					out.println("<a href=\"./touch_nfc.jsp\">ポイント加算</a>");
-				}else{
-					out.println("ログインに失敗しました。");
-					out.println("<h2>メールアドレスかパスワードに不備があります。</h2>");
-					out.println("<h1>ログイン</h1>");
-				}
-			%>
-		</h1>
+
+		<%
+			HttpSession ses = request.getSession();
+			String flg = (String) ses.getAttribute("login");
+			String msg = null;
+			if ("true".equals(flg)) {
+				out.println("<h1>管理画面</h1><br>");
+				out.println("<a href=\"./check.jsp\">利用状況の確認</a><br>");
+				out.println("<a href=\"./group_regist.jsp\">店舗間グループ登録/確認</a><br>");
+				out.println("<a href=\"./coupon_regist.jsp\">クーポン発行/確認</a><br>");
+				out.println("<a href=\"./touch_nfc.jsp\">ポイント加算</a>");
+			} else {
+				out.println("<font color=\"red\">");
+				out.println("ログインに失敗しました。<br>");
+				out.println("メールアドレスかパスワードに不備があります。</font><hr>");
+				out.println("<h1>ログイン</h1>");
+				out.println("<form name=\"login\" onsubmit=\"return checkForm()\" method=\"POST\" action=\"/CVG_Project/Login\">");
+				out.println("<table>");
+				out.println("<tr>");
+				out.println("<td>メールアドレス:</td>");
+				out.println("<td><input type=\"text\" name=mail></td>");
+				out.println("</tr><tr>");
+				out.println("<td>パスワード:</td>");
+				out.println("<td><input type=\"password\" name=passwd></td>");
+				out.println("</tr><tr><td>");
+				out.println("<a href=\"store_regist.jsp\">新規登録</a></td>");
+				out.println("<td align = \"right\"><input type=\"submit\" value=\"ログイン\"></td></tr>");
+				out.println("</table>");
+				out.println("</form>");
+
+			}
+		%>
 	</center>
 </body>
 </html>

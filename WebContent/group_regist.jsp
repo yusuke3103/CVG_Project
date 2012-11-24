@@ -38,7 +38,7 @@
 				<td><input type=text name=money size=5></td>
 				<td>円</td>
 				<td><select name=terms>
-						<OPTION value="0"></OPTION>
+						<OPTION value=NULL></OPTION>
 						<OPTION value="1">以上で</OPTION>
 						<OPTION value="2">毎に</OPTION>
 				</select></td>

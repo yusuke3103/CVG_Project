@@ -10,7 +10,10 @@
 	String e_month = request.getParameter("e_month");
 	String e_date = request.getParameter("e_date");
 	String send = request.getParameter("send");
-
+	send = new String(send.getBytes("8859_1"), "UTF-8");
+	String[] rank = request.getParameterValues("rank");
+	rank = new String(rank.getBytes("8859_1"),"UTF-8");
+	System.out.println(rank);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,6 +22,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	System.out.println(send);
 
+
+
+%>
 </body>
 </html>
