@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript">
+var s_s;
+</script>
+<title>登録画面</title>
 </head>
 <body>
+<!--  <%
+	String strInput;
+	strInput = request.getParameter("input");
+%>  -->
 	<form action="./group_check.jsp">
 		<h2>
 			<u>基本情報設定</u>
@@ -17,17 +25,25 @@
 				<td><input type=text name=groupname></td>
 			</tr>
 			<tr>
+				<td>グループID</td>
+				<td><input type=text name=groupid></td>
+			</tr>
+			<tr>
 				<td>店舗数</td>
 				<td><input type=text name=count></td>
 			</tr>
 			<tr>
-				<td>代表店舗</td>
-				<td>********</td>
+				<td>代表店舗ID</td>
+				<td><input type=text name=delegation></td>
 			</tr>
 			<tr></tr>
 			<tr>
-				<td>店舗ID</td>
-				<td><input type=text name=group1></td>
+				<td>店舗ID1</td>
+				<td><input type=text name=tenpo1></td>
+			</tr>
+						<tr>
+				<td>店舗ID2</td>
+				<td><input type=text name=tenpo2></td>
 			</tr>
 		</table>
 		<h2>
@@ -39,8 +55,8 @@
 				<td>円</td>
 				<td><select name=terms>
 						<OPTION value=NULL></OPTION>
-						<OPTION value="1">以上で</OPTION>
-						<OPTION value="2">毎に</OPTION>
+						<OPTION value="以上で">以上で</OPTION>
+						<OPTION value="毎に">毎に</OPTION>
 				</select></td>
 				<td><input type=text name=point size=2></td>
 				<td>ポイント付与</td>
@@ -53,7 +69,7 @@
 		<table>
 			<tr>
 				<td>ポイント:</td>
-				<td>0 〜 <input type=text name=r_e size=1></td>
+				<td><input type= text name=r_s size=1> 〜 <input type=text name=r_e size=1></td>
 			</tr>
 			<tr>
 				<td>特典</td>
@@ -64,22 +80,22 @@
 		<table>
 			<tr>
 				<td>ポイント:</td>
-				<td>0 〜 <input type=text name=r_e size=1></td>
+  				<td><input type=text name=s_s size=1> 〜 <input type=text name=s_e size=1></td>
 			</tr>
 			<tr>
 				<td>特典</td>
-				<td><input type=text name=r_tokuten></td>
+				<td><input type=text name=s_tokuten></td>
 			</tr>
 		</table>
 		<h3>ゴールド会員</h3>
 		<table>
 			<tr>
 				<td>ポイント:</td>
-				<td>0 〜 <input type=text name=r_e size=1></td>
+				<td><input type=text name=g_s size=1> 〜 <input type=text name=g_e size=1></td>
 			</tr>
 			<tr>
 				<td>特典</td>
-				<td><input type=text name=r_tokuten></td>
+				<td><input type=text name=g_tokuten></td>
 			</tr>
 		</table>
 		<input type=submit value=確認><input type="reset" value=リセット>

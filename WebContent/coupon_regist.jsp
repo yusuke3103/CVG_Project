@@ -63,9 +63,9 @@
 			<h2>配信先</h2>
 			<table>
 				<tr>
-					<td><input type="radio" name=send value="1" onclick="ranklist">全員</td>
-					<td><input type="radio" name=send value="2">店舗利用者</td>
-					<td><input type="radio" name=send value="3">グループ利用者</td>
+					<td><input type="radio" name=send value="全員" onclick="ranklist">全員</td>
+					<td><input type="radio" name=send value="店舗利用者">店舗利用者</td>
+					<td><input type="radio" name=send value="グループ利用者">グループ利用者</td>
 				</tr>
 			</table>
 			<br>

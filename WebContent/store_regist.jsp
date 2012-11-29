@@ -16,7 +16,7 @@
 		var storename = document.regist.storename;
 		var pass1 = document.regist.pass1;
 		var pass2 = document.regist.pass2;
-		var zip = document.regist.zip;
+		var zipcode = document.regist.zip;
 		var pref = document.regist.pref;
 		var addr = document.regist.addr;
 		var phone = document.regist.phonenumber;
@@ -33,18 +33,18 @@
 			return false;
 		}
 
-		if (zip.value == "") {
+		if (zipcode.value == "") {
 			alert("郵便番号が入力されていません");
 			zip.focus();
 			return false;
-		}		
+		}
 		if (addr.value == "") {
 			alert("郵便番号が入力されていません");
 			addr1.focus();
 			return false;
 		}
-		if(phone.match(/[^0-9]/g)){
-			alert ("数値以外が含まれています");
+		if (phone.match(/[^0-9]/g)) {
+			alert("数値以外が含まれています");
 			phone.focus();
 			return false;
 		}
@@ -63,31 +63,30 @@
 		<h2>
 			<u>登録画面</u>
 		</h2>
+		<p><font color = red>※</font>は必須項目です。</p>
 		<table>
 			<tr>
-				<td>店舗名</td>
+				<td><font color=red>※</font>店舗名</td>
 				<td><input type=text name=storename></td>
 			</tr>
 			<tr>
-				<td>パスワード</td>
-				<td><input type=text name=pass1 maxlength="6" width="10"></td>
+				<td><font color=red>※</font>パスワード</td>
+				<td><input type=password name=pass1 maxlength="12" size="10"></td>
+				<td>6~12文字 半角英数字</td>
 			</tr>
 			<tr>
-				<td>もう一度入力</td>
-				<td><input type=text name=pass2 maxlength="6" size="10"></td>
+				<td><font color=red>※</font>もう一度入力</td>
+				<td><input type=password name=pass2 maxlength="12" size="10"></td>
 			</tr>
-
-		</table>
-		<br>
-		<table>
+			<tr></tr>
 			<tr>
-				<td>郵便番号</td>
-				<td><input type="text" name="zip" size="10" maxlength="8"
+				<td><font color=red>※</font>郵便番号</td>
+				<td><input type="text" name="zipcode" size="10" maxlength="8"
 					onKeyUp="AjaxZip2.zip2addr(this,'pref','addr');"></td>
 				<td>例）123-4567 --- 1234567</td>
 			</tr>
 			<tr>
-				<td>都道府県</td>
+				<td><font color=red>※</font>都道府県</td>
 				<td><select name="pref">
 						<option value="">↓</option>
 						<option value="北海道">北海道</option>
@@ -139,7 +138,7 @@
 						<option value="沖縄県">沖縄県</option>
 				</select></td>
 			<tr>
-				<td>市区町村</td>
+				<td><font color=red>※</font>市区町村</td>
 				<td><input type=text name=addr></td>
 			</tr>
 			<tr>
@@ -147,12 +146,12 @@
 				<td><input type=text name=addr2></td>
 			</tr>
 			<tr>
-				<td>電話番号</td>
+				<td><font color=red>※</font>電話番号</td>
 				<td><input type=text name=phonenumber></td>
 				<td>例)090-1234-5678 --- 09012345678
 			</tr>
 			<tr>
-				<td>メールアドレス</td>
+				<td><font color=red>※</font>メールアドレス</td>
 				<td><input type=text name=mail></td>
 			</tr>
 			<tr>
