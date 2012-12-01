@@ -18,10 +18,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+String id = request.getParameter("id");
+System.out.println(id);
+%>
 	<div align=center>
 		<form action="./coupon_check.jsp" name=regist
 			onsubmit="return checkForm()" method="POST">
 			<table>
+				<tr>
+					<td>管理者ID</td>
+					<td><input type=text name=id></td>
+				</tr>
 				<tr>
 					<td>クーポン名</td>
 					<td><input type=text name=name></td>
@@ -34,7 +42,7 @@
 			<h2>有効期限</h2>
 			<table>
 				<tr>
-					<td><input type=text name=s_year></td>
+					<td><input type="date" value="2010-01-20" name=s_year /></td>
 					<td>年</td>
 					<td><input type="number" name=s_month width="2" min="1"
 						max="12"></td>
@@ -63,15 +71,21 @@
 			<h2>配信先</h2>
 			<table>
 				<tr>
-					<td><input type="radio" name=send value="全員" onclick="ranklist">全員</td>
-					<td><input type="radio" name=send value="店舗利用者">店舗利用者</td>
-					<td><input type="radio" name=send value="グループ利用者">グループ利用者</td>
+					<td><input type="radio" name=send1 value="100000"
+						onclick="okurisaki">全員</td>
+					<td><input type="radio" name=send1 value="010000">店舗利用者</td>
+					<td><input type="radio" name=send1 value="001000">グループ利用者</td>
+				</tr>
+				<tr>
+					<td><input type="radio" name=send2 value="000100"
+						onclick="ranklist">レギュラー会員</td>
+					<td><input type="radio" name=send2 value="000010">シルバー会員</td>
+					<td><input type="radio" name=send2 value="000001">ゴールド会員</td>
 				</tr>
 			</table>
 			<br>
 			<table>
-
-
+				<tr>
 					<td></td>
 					<td><input type=submit value="確認"></td>
 					<td><input type=reset value=リセット></td>

@@ -24,25 +24,41 @@ public class Coupon_add extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("id");
 		String name = request.getParameter("name");
-		String content = request.getParameter("content");
-		String s_year = request.getParameter("s_year");
-		String s_month = request.getParameter("s_month");
+		String content = request.getParameter("text");
 		String s_date = request.getParameter("s_date");
+		String s_month = request.getParameter("s_month");
+//		String s_day = request.getParameter("s_day");
 		String s_time = request.getParameter("s_time");
-		String e_year = request.getParameter("e_year");
-		String e_month = request.getParameter("e_month");
 		String e_date = request.getParameter("e_date");
+		String e_month = request.getParameter("e_month");
+//		String e_day = request.getParameter("e_day");
 		String e_time = request.getParameter("e_time");
-		String send = request.getParameter("send");
-		String rank = request.getParameter("rank");
+		String send3 = request.getParameter("send3");
+
 		
-//		try{
+		String sql = "insert into t_coupon (id, name, content, s_datetime, e_datetime, send) values( \""+id+"\", \""+name+"\", \""+content+"\", '"+s_date+" "+s_month+":00', '"+e_date+" "+e_month+" ,"+send3+");";
+		System.out.println(sql);
+		
+		try{
+			
 			Connection con = DBManager.getConnection();
 			Statement stm = con.createStatement();
-//			try{
-				//int res = stm.executeUpdate("insert into t_coupon set \"" + name + "\,")
-//			}
-//		}catch
+			
+			try{
+			int res = stm.executeUpdate(sql);
+			HttpSession ses = request.getSession();
+			ses.setAttribute("res", res);
+			System.out.println(res);
+			}catch (Exception ex){
+				ex.printStackTrace();
+			}
+			stm.close();
+
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+		response.sendRedirect("coupon_add_check.jsp");
 	}
 }

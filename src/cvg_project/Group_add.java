@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -52,27 +53,27 @@ public class Group_add extends HttpServlet{
 		String g_tokuten = request.getParameter("g_tokuten");
 //		g_tokuten = new String(g_tokuten.getBytes("8859_1"), "UTF-8");
 		
-		System.out.println(groupname);
-		System.out.println(count);
-		System.out.println(delegation);
-		System.out.println(groupid);
-		System.out.println(money);
-		System.out.println(terms);
-		System.out.println(point);
-		System.out.println(r_s);
-		System.out.println(r_e);
-		System.out.println(r_tokuten);
-		System.out.println(s_s);
-		System.out.println(s_e);
-		System.out.println(s_tokuten);
-		System.out.println(g_s);
-		System.out.println(g_e);
-		System.out.println(g_tokuten);
+//		System.out.println(groupname);
+//		System.out.println(count);
+//		System.out.println(delegation);
+//		System.out.println(groupid);
+//		System.out.println(money);
+//		System.out.println(terms);
+//		System.out.println(point);
+//		System.out.println(r_s);
+//		System.out.println(r_e);
+//		System.out.println(r_tokuten);
+//		System.out.println(s_s);
+//		System.out.println(s_e);
+//		System.out.println(s_tokuten);
+//		System.out.println(g_s);
+//		System.out.println(g_e);
+//		System.out.println(g_tokuten);
 		
 		String sql1 = "insert into t_group values( \""+groupid+"\",\""+groupname+"\", "+count+", \""+delegation+"\","+money+", \""+terms+"\", "+point+", "+r_s+", "+r_e+", \""+r_tokuten+"\", "+s_s+", "+s_e+", \""+ s_tokuten +"\", "+g_s+", "+g_e+", \""+g_tokuten+"\");";
 		System.out.println(sql1);
 		
-		String sql2 = "insert into t_group_id values( \""+ groupid +"\",\""+tenpo1+ ");";
+		String sql2 = "insert into t_group_id values( \""+ groupid +"\",\""+tenpo1+"\");";
 		System.out.println(sql2);
 		
 		try{
@@ -81,18 +82,23 @@ public class Group_add extends HttpServlet{
 			Statement stm = con.createStatement();
 			
 			try{
-			int res = stm.executeUpdate(sql1);
-			int res2 = stm.executeUpdate(sql1);
-			System.out.println(res);
+			int res1 = stm.executeUpdate(sql1);
+			int res2 = stm.executeUpdate(sql2);
+			System.out.println(res1);
 			System.out.println(res2);
+			HttpSession ses = request.getSession();
+			ses.setAttribute("res1", res1);
+			ses.setAttribute("res2",res2);
 			}catch (Exception ex){
 				ex.printStackTrace();
 			}
 			stm.close();
+			//HttpSession ses = request.getSession();
+			//ses.setAttribute("res", res);
 
 		}catch (SQLException e){
 			e.printStackTrace();
 		}
-		response.sendRedirect("");
+		response.sendRedirect("group_add_check.jsp");
 	}
 }

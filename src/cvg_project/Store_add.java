@@ -55,14 +55,22 @@ public class Store_add extends HttpServlet{
 		try{
 		int res = stm.executeUpdate(sql);
 		System.out.println(res);
+		HttpSession ses = request.getSession();
+		ses.setAttribute("res", res);
+		if(res==1){
+			
+		}
 		}catch (Exception ex){
 			ex.printStackTrace();
 		}
 		stm.close();
 
+
 	}catch (SQLException e){
 		e.printStackTrace();
 	}
+	
+	
 	response.sendRedirect("");
 }
 }
